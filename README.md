@@ -1,4 +1,6 @@
-# Astro Starter Kit: Basics
+# FFCAM-aura.fr
+
+> Ce repo contient le code source du site https://ffcam-aura.fr.
 
 ```sh
 npm create astro@latest -- --template basics
