@@ -1,56 +1,71 @@
-# FFCAM-aura.fr
+Voici un README pour le projet `ffcam-aura` :
 
-> Ce repo contient le code source du site https://ffcam-aura.fr.
+---
 
+# FFCAM-aura
+
+> Ce dépôt contient le code source du site [FFCAM-aura.fr](https://ffcam-aura.fr), développé avec [Astro](https://astro.build/).
+
+## Installation et Utilisation
+
+### Prérequis
+Le projet utilise [pnpm](https://pnpm.io/) pour la gestion des paquets. Assurez-vous d’avoir pnpm installé sur votre machine avant de continuer.
+
+### Commandes
+
+Pour installer les dépendances :
 ```sh
-npm create astro@latest -- --template basics
+pnpm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+Pour démarrer le site en local :
+```sh
+pnpm dev
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Pour vérifier le code et le compiler pour la production :
+```sh
+pnpm run build
+```
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Pour prévisualiser la version build du site :
+```sh
+pnpm run preview
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+### Déploiement sur Cloudflare Pages
 
-## 🧞 Commands
+Le site peut être déployé sur Cloudflare Pages avec la commande suivante :
+```sh
+pnpm run deploy
+```
 
-All commands are run from the root of the project, from a terminal:
+## Configuration
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Les principales configurations se trouvent dans le fichier `package.json`. Pour les types de Cloudflare Workers, vous pouvez générer les types avec :
+```sh
+pnpm run cf-typegen
+```
 
-## 👀 Want to learn more?
+## Structure du projet
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Le projet suit l'architecture recommandée par Astro, avec les fichiers et dossiers principaux :
+
+- **src/** : Contient le code source du site.
+- **public/** : Contient les ressources publiques (images, icônes, etc.).
+- **astro.config.mjs** : Fichier de configuration pour Astro.
+- **wrangler.toml** : Configuration pour le déploiement sur Cloudflare.
+
+## Dépendances principales
+
+- **Astro** : Framework de base du site.
+- **Cloudflare** : Utilisé pour héberger et gérer le déploiement du site.
+- **TypeScript** : Utilisé pour le typage et la robustesse du code.
+
+## Licence
+
+Le code de ce projet est distribué sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+
+---
+
+Ce README devrait vous aider à démarrer et à contribuer au développement du site.
